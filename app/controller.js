@@ -6,11 +6,15 @@ exports.getPersona = function (req, res){
 	Persona.find(
 		function(err, persona) {
 			if (err)
-				res.send(err)
-					res.json(persona); // devuelve todas las Personas en JSON		
+				res.send(err);
+			res.json(persona); // devuelve todas las Personas en JSON
 				}
 			);
-}
+};
+
+
+
+
 
 // Guarda un objeto Persona en base de datos
 exports.setPersona = function(req, res) {
