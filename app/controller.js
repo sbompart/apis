@@ -3,13 +3,22 @@ var Persona = require('./modelo/persona');
 
 // Obtiene todos los objetos Persona de la base de datos
 exports.getPersona = function (req, res){
-	Persona.find(
-		function(err, persona) {
-			if (err)
+    var id = req.params.id;
+    if(id){
+    	Persona.findById(id, function (err, persona) {
+			if(err)
 				res.send(err);
-			res.json(persona); // devuelve todas las Personas en JSON
-				}
-			);
+			res.json(persona);
+        });
+	}else{
+        Persona.find(
+            function(err, persona) {
+                if (err)
+                    res.send(err);
+                res.json(persona); // devuelve todas las Personas en JSON
+            }
+        );
+	}
 };
 
 
