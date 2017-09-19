@@ -59,7 +59,6 @@ exports.create = function(req, res) {
 };
 
 exports.update = function(req, res){
-    console.log("----",req);
     Person.update( {_id : req.params.idPerson},
         {$set:{name : req.body.name, edad: req.body.edad}},
         function(err, person) {
