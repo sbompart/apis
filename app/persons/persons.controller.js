@@ -30,7 +30,12 @@ exports.get = function (req, res) {
         Person.findById(req.params.idPerson, function (err, person) {
             if(err)
                 res.send(err);
-            res.json(person);
+            var obj = {
+                id: person._id,
+                name: person.name,
+                edad: person.edad
+            };
+            res.json(obj);
         });
 };
 
@@ -54,6 +59,7 @@ exports.create = function(req, res) {
 };
 
 exports.update = function(req, res){
+    console.log("----",req);
     Person.update( {_id : req.params.idPerson},
         {$set:{name : req.body.name, edad: req.body.edad}},
         function(err, person) {
