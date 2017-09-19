@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="proyectoApp">
+<head>
+    <base href="/">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>:. Inicio .:</title>
+
+    <!--<link href="public/assets/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>-->
+    <link rel="stylesheet" href="public/assets/css/style.css" type="text/css" media="screen,projection"/>
+    <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css" type="text/css" media="screen,projection"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.css">
+
+
+</head>
+<body ng-controller="AppCtrl">
+<div ng-if="isAdmin" layout="column" layout-fill>
+    <div ng-include="'public/components/toolbar.html'"></div>
+    <md-content flex>
+        <div ng-view></div>
+    </md-content>
+    <div ng-include="'public/components/footer.html'"></div>
+</div>
+
+
+<div ng-if="!isAdmin" layout="column">
+    <div ng-include="'public/login.html'"></div>
+</div>
+<script src="/bower_components/angular/angular.js"></script>
+<script src="/bower_components/angular-route/angular-route.js"></script>
+<script src="/bower_components/angular-scroll/angular-scroll.min.js"></script>
+<script src="/bower_components/ng-parallax/angular-parallax.min.js"></script>
+<script src="/bower_components/angular-aria/angular-aria.js"></script>
+<script src="/bower_components/angular-animate/angular-animate.js"></script>
+<script src="/bower_components/angular-material/angular-material.js"></script>
+<script src="./public/App.js"></script>
+<!--
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="public/assets/js/materialize.js"></script>
+<script src="public/assets/js/init.js"></script>
+-->
+
+</body>
+</html>

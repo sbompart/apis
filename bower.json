@@ -1,0 +1,13 @@
+{
+  "name": "Proyecto",
+  "version": "0.0.1",
+  "author": "Saul Bompart",
+  "dependencies": {
+    "angular-route": "^1.6.4",
+    "angular": "^1.6.4",
+    "ng-parallax": "^0.1.8",
+    "angular-material": "^1.1.4",
+    "components-font-awesome": "^4.7.0",
+    "font-awesome": "^4.7.0"
+  }
+}

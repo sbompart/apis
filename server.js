@@ -11,12 +11,11 @@ mongoose.connect('mongodb://localhost:27017/EjemploMEAN');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(methodOverride());
-app.use(express.static(__dirname + '/angular'));
+app.use(express.static(__dirname + '/'));
 
 // Cargamos los endpoints
-
 require('./app/routes')(app);
 
-app.listen(8080, function() {
-    console.log("Node server running on http://localhost:8080");
+app.listen(7001, function() {
+    console.log("Node server running on http://localhost:7001");
 });

@@ -4,7 +4,6 @@
 var mongoose = require('mongoose');
 
 module.exports = mongoose.model('Persons', {
-    nombre: String,
-    apellido: String,
+    name: String,
     edad: String
 });

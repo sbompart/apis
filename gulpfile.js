@@ -15,12 +15,12 @@ gulp.task( 'server:start', function() {
 });
 
 gulp.task('html', function () {
-    gulp.src('./angular/**/*.html')
+    gulp.src('./public/**/*.html')
         .pipe(connect.reload());
 });
 
 gulp.task('watch', function () {
-    gulp.watch(['./angular/**/*.html'],['html']);
+    gulp.watch(['./public/**/*.html'],['html']);
 });
 
 gulp.task( 'default', [ 'server:start','watch' ]);
