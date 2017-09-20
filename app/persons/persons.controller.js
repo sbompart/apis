@@ -52,7 +52,16 @@ exports.create = function(req, res) {
             Person.find(function(err, person) {
                 if (err)
                     res.send(err);
-                res.json(person);
+                var hero = [];
+                _.forEach(person, function (value) {
+                    var obj = {
+                        id: value._id,
+                        name: value.name,
+                        edad: value.edad
+                    };
+                    hero.push(obj);
+                });
+                res.json(hero); // devuelve todas las Personas en JSON
             });
         });
 
