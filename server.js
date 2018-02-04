@@ -4,6 +4,8 @@ var app = express();
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var mongoose = require('mongoose');
+var _ = require("lodash");
+
 
 // Configuracion
 mongoose.connect('mongodb://localhost:27017/EjemploMEAN');
