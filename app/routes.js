@@ -7,8 +7,8 @@ module.exports = function(app) {
         next();
     });
 	// Modulo de Personas
-    app.use('/api/persons', require('./persons/index.js'));
-	app.use('/api/heroes', require('./heroes/index.js'));
+    app.use('/api/persons', require('./persons'));
+	app.use('/api/heroes', require('./heroes'));
 
 	// application -------------------------------------------------------------
 	app.get('*', function(req, res) {
