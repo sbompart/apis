@@ -8,12 +8,14 @@ var async = require("async");
 const all = async (req, res) => {
     const a = parseInt(req.headers.a);
     const b = parseInt(req.headers.b);
-    let stack = [];
+
+    /* Version de [] */
+    /* let stack = [];
 
     const one = (callback) => {
         console.log("1");
         setTimeout(function() {
-            callback(null, a+b);
+            callback("ERRRO", null);
         }, 3000);
     }
 
@@ -34,7 +36,33 @@ const all = async (req, res) => {
     stack.push(three);
 
     async.parallel(stack, (err, results) => {
+        console.log("------", err, results)
         if(err)
+            return res.status(500).json("error");
+        return res.status(200).json(results);
+    }); */
+
+    /* Version de {} */
+    let stack = {};
+
+    stack.getUserName = (callback) => {
+        const userName = 'Saul';
+        callback(null, userName);
+    };
+
+    stack.getAge = (callback) => {
+        const userAge = 30;
+        callback(true, userAge);
+    };
+
+    stack.getGender = (callback) => {
+        const userGender = 'Male';
+        callback(null, userGender);
+    };
+
+    async.parallel(stack, (err, results) => {
+        console.log("------", err, results)
+        if (err)
             return res.status(500).json("error");
         return res.status(200).json(results);
     });
