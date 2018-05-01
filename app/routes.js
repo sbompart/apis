@@ -8,7 +8,8 @@ module.exports = function(app) {
     });
 	// Modulo de Personas
     app.use('/api/persons', require('./persons'));
-	app.use('/api/heroes', require('./heroes'));
+    app.use('/api/heroes', require('./heroes'));
+    app.use('/api/async', require('./async'));
 
 	// application -------------------------------------------------------------
 	app.get('*', function(req, res) {

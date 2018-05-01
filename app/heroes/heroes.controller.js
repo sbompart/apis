@@ -1,9 +1,6 @@
 /**
  * Created by scbr_ on 22-07-2017.
  */
-/**
- * Created by Saul Bompart on 16-06-2017.
- */
 'use strict';
 var Heroes = require('./heroes.model');
 
