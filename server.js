@@ -16,6 +16,6 @@ app.use(express.static(__dirname + '/'));
 // Cargamos los endpoints
 require('./app/routes')(app);
 
-app.listen(7001, function() {
+app.listen(process.env.PORT || 7001, function() {
     console.log("Node server running on http://localhost:7001");
 });
