@@ -6,7 +6,7 @@ var methodOverride = require('method-override');
 var mongoose = require('mongoose');
 
 // Configuracion
-mongoose.connect('mongodb://localhost:27017/EjemploMEAN');
+//mongoose.connect('mongodb://localhost:27017/EjemploMEAN');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
